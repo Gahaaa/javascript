@@ -188,7 +188,7 @@ else if(age === 100){
 
 ## HTML in Javascript
 
-console.dir(): 더 자세히 볼 수 있음(가져올 수 있는 항목들 확인가능)
+console.dir(): document 내부 볼 수 있음(가져올 수 있는 항목들 확인가능)
 
 ### getElementsByTagName
 
@@ -198,6 +198,118 @@ console.dir(): 더 자세히 볼 수 있음(가져올 수 있는 항목들 확�
 
 ### querySelectorAll
 * 해당하는 Array 다 가져옴
+
+---
+
+### [추가하고 싶은 이벤트가 있을 때 확인하는 방법](https://developer.mozilla.org/ko/)
+->console.dir()을 통해 접두사on 붙어있는것이 사용할 수 있는 이벤트
+
+```js
+
+const hello = document.querySelector('.hellos');
+
+function handleTitleClick(){
+    hello.style.color = 'green';
+}
+
+function handleTitleMouse(){
+    hello.innerText = 'Mouse is Here!';
+}
+
+function handleleave(){
+    hello.innerText = 'Mouse is gone!';
+}
+
+hello.onclick = handleTitleClick;
+//= hello.addEventListener('click', handleTitleClick)
+
+hello.onmouseover = handleTitleMouse;
+// hello.addEventListener('mouseover', handleTitleMouse)
+
+hello.onmouseleave = handleleave;
+//hello.addEventListener('mouseleave', handleleave)
+
+//addEventListener 더 선호(removeEventListener 사용을 위해)
+
+```
+
+### if를 이용한 addEnentListener
+
+```js
+const hello = document.querySelector('.hellos');
+
+function handleTitleClick(){
+    const currentColor = hello.style.color;
+    let newColor;
+    if(currentColor === "blue"){
+        newColor = 'tomato';
+    }else{
+        newColor = 'blue';
+    }
+
+
+    hello.style.color = newColor;
+    console.log(newColor)
+    //newColor 입력으로 hello 값 바꿈
+}
+
+hello.addEventListener('click', handleTitleClick);
+```
+
+## class 추가
+
+### className
+```js
+onst h1 = document.querySelector(".hellos h1:first-of-type")
+
+function handleTitleClick(){
+    const clickedClass = "clicked"
+    if(h1.className === clickedClass){
+        h1.className = '';
+    }else{
+        h1.className = clickedClass;
+    }
+    
+    console.log(h1.className)
+}
+
+h1.addEventListener('click', handleTitleClick);
+```
+-> class 지정되지만 **기존 class 없어짐**
+
+<br>
+
+### classList
+```js
+const h1 = document.querySelector(".hellos h1:first-of-type")
+
+function handleTitleClick(){
+    const clickedClass = "clicked"
+    if(h1.classList.contains(clickedClass)){
+        h1.classList.remove(clickedClass);
+    }else{
+        h1.classList.add(clickedClass);
+    }
+    /*== function handleTitleClick(){
+            h1.classList.toggle("clicked")
+        }*/
+
+h1.addEventListener('click', handleTitleClick);
+```
+-> 반복적인 add, remove는  **toggle**로 수정가능
+
+## Event
+### form과 input
+```html
+<form id="login-form">
+        <input required maxlength="15" type="text" placeholder="What is your name?">
+        <button>Log In</button>
+    </form>
+```
+* form 안에 input을 넣어야 자동으로 sumit
+* 더이상의 input이 없을 때 엔터를 치면 sumit
+* if로 유효성 검사를 할 수 있지만 html에서 처리 할 수 있음 
+
 
 
 
