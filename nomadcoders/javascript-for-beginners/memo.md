@@ -150,6 +150,8 @@ const calculator = {
 (콘솔창에서 변수 이름으로 값확인 가능!)
 ###
 
+<br>
+
 ## 7)Conditionals(조건문)
 
 - parsInt: string -> number(문자 입력시 NAN)
@@ -181,25 +183,36 @@ else if(age === 100){
 }
 
 ```
+<br>
 
 ## 8)The Document Object
 
 `· document: 우리가 접근할 수 있는HTML`
 
+<br>
+
 ## HTML in Javascript
 
 console.dir(): document 내부 볼 수 있음(가져올 수 있는 항목들 확인가능)
 
+<br>
+
 ### getElementsByTagName
+
+<br>
 
 ### querySelector
 * element를 css 방식으로 검색할 수 있음
 * 하나의 element만 return
 
+<br>
+
 ### querySelectorAll
 * 해당하는 Array 다 가져옴
 
 ---
+
+<br>
 
 ### [추가하고 싶은 이벤트가 있을 때 확인하는 방법](https://developer.mozilla.org/ko/)
 ->console.dir()을 통해 접두사on 붙어있는것이 사용할 수 있는 이벤트
@@ -232,6 +245,7 @@ hello.onmouseleave = handleleave;
 //addEventListener 더 선호(removeEventListener 사용을 위해)
 
 ```
+<br>
 
 ### if를 이용한 addEnentListener
 
@@ -291,8 +305,8 @@ function handleTitleClick(){
         h1.classList.add(clickedClass);
     }
     /*== function handleTitleClick(){
-            h1.classList.toggle("clicked")
-        }*/
+            h1.classList.toggle("clicked")*/
+        }
 
 h1.addEventListener('click', handleTitleClick);
 ```
@@ -310,7 +324,41 @@ h1.addEventListener('click', handleTitleClick);
 * 더이상의 input이 없을 때 엔터를 치면 sumit
 * if로 유효성 검사를 할 수 있지만 html에서 처리 할 수 있음 
 
+### string
 
+* 대문자 변수: 일반적으로 string만 포함한 변수 대문자로 표기
+* string과 변수 같이 쓰기
+```js
+    const greeting = document.querySelector('#greeting');
+
+    const HIDDEN_CLASSNAME = "hidden"//일반적으로 string만 포함한 변수 대문자로 표기
+
+    function onLoginSubmit(info){//info: 막 일어난 것들
+        const userName = loginInput.value;
+        greeting.innerText = "Hello " + userName;
+        greeting.innerText = `Hello ${userName}`;
+       //같은 결과
+        
+        
+    }
+
+```
+
+---
+<br>
+
+### localStorage
+
+```js
+localStorage.setItem("username","nico")
+//로컬 스토리지에 저장
+
+localStorage.getItem("username")
+//"nico"
+
+localStorage.removeItem("username")
+//삭제 가능
+```
 
 
 
