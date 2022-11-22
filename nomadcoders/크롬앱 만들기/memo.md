@@ -360,5 +360,22 @@ localStorage.removeItem("username")
 //삭제 가능
 ```
 
+---
+
+<br>
+
+### padStart()
+
+```js
+"1".padStart(2, "0");
+
+//(길이, 넣을 문자)
+//"01"
+
+"hello".padStart(7, "x");
+//xxhello
+```
+
+
 
 
