@@ -365,6 +365,9 @@ localStorage.removeItem("username")
 <br>
 
 ### padStart()
+문자열에서 길이 맞춰줌
+
+padStart(길이, 넣을 문자)
 
 ```js
 "1".padStart(2, "0");
