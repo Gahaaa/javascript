@@ -379,6 +379,22 @@ padStart(길이, 넣을 문자)
 //xxhello
 ```
 
+## JSON
+- JSON은 JavaScript Object Notation의 약자로서 데이터를 문자열의 형태로 나타내기 위해서 사용
+- JSON은 특히 네트워크를 통해 서로 다른 시스템들이 데이터를 주고 받을 때 많이 사용되기 때문에 어렵지 않게 접할 수 있음
+  
+  <br>
+
+### JSON.stringify()
+- avaScript 객체를 JSON 문자열로 변환
+- 역으로 JavaScript 객체를 JSON 문자열로 변환할 때는 JSON 객체의 stringify() 메서드를 사용
+
+<br>
+
+### JSON.stringify()
+- JSON 문자열을 JavaScript 객체로 변환
+- JSON 문자열을 JavaScript 객체로 변환할 때는 JSON 객체의 parse() 메서드를 사용
+
 
 
 
