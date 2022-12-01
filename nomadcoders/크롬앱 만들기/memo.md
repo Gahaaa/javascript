@@ -386,7 +386,7 @@ padStart(길이, 넣을 문자)
   <br>
 
 ### JSON.stringify()
-- avaScript 객체를 JSON 문자열로 변환
+- JavaScript 객체를 JSON 문자열로 변환
 - 역으로 JavaScript 객체를 JSON 문자열로 변환할 때는 JSON 객체의 stringify() 메서드를 사용
 
 <br>
@@ -394,6 +394,27 @@ padStart(길이, 넣을 문자)
 ### JSON.stringify()
 - JSON 문자열을 JavaScript 객체로 변환
 - JSON 문자열을 JavaScript 객체로 변환할 때는 JSON 객체의 parse() 메서드를 사용
+
+---
+
+<br><br>
+
+## filter()
+
+- 조건에 맞는 새로운 배열을 도출
+- 원본 배열을 변경하지 않음
+
+```js
+function filterEx(item){return item !==3}
+
+[1,2,3,4].filter(filterEx)
+//[1,2,4]
+
+const arr = [1,2,3,4,5]
+const newArr = arr.filter(item => item >2)
+console.log(newArr)
+//[3,4,5]
+```
 
 
 
