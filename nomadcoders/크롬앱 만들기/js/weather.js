@@ -1,5 +1,16 @@
-function onGeoOk(){
+function onGeoOk(position){
+    const lat = position.coords.latitude;
+    const lng = position.coords.longitude;
+
+
+
+    console.log("You live in " + lat + lng)
     
 }
 
-navigator.geolocation.getCurrentPosition();
+function onGeoError(){
+    alert("Can't find you, No waether for you")
+
+}
+
+navigator.geolocation.getCurrentPosition(onGeoOk, onGeoError);
