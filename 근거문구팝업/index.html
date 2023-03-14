@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://code.jquery.com/jquery-1.12.4.js"
+      integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU="
+      crossorigin="anonymous"
+    ></script>
+    <script src="./script.js" defer></script>
+  </head>
+  <style>
+    .btn_wrap{padding:100px;}
+    .btn_wrap .btn{border:1px solid #222;border-radius:10px;padding:10px;text-decoration:none;color:#222;}
+
+    .layer{position:fixed;top:200px;left:200px;display:none;;}
+    .layer .cont{background:#000;color:#fff;padding:20px;}
+
+  </style>
+  <body>
+    <div class="btn_wrap">
+        <a class="btn" href="javascript:void(0)"onclick="layerOpen('text_pop')">버튼클릭</a>
+        <a class="btn" href="javascript:layerOpen('text_pop',openTextPopup('text01'));">버튼클릭</a>
+        <a class="btn" href="javascript:layerOpen('text_pop',openTextPopup('text02'));">버튼클릭</a>
+    </div>
+    
+    <div class="layer">
+      <div id="text_pop" class="cont">
+        <p class="txt_cont">aaa</p>
+      </div>
+    </div>
+  </body>
+</html>
